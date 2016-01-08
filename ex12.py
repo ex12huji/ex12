@@ -1,4 +1,5 @@
 import tkinter as tki
+import socket
 
 class Gui:
     def __init__(self,parent):
@@ -44,6 +45,6 @@ class Gui:
         self._canvas.pack(side=tki.RIGHT)
 
 root = tki.Tk()
-Gui(root)#hiiig
+Gui(root)
 root.mainloop()
 
