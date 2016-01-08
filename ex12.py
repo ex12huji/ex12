@@ -31,18 +31,22 @@ class Gui:
         rectangleButton.pack(side=tki.RIGHT, padx=2, pady=2)
 
 
-        toolbarFrame.pack(side=tki.RIGHT)
+        toolbarFrame.pack(side=tki.TOP)
 
         # creating the canvas and left users window
-        self._left_window = tki.Frame(self._parent, height=150, width=100)
+        self._left_window = tki.Frame(self._parent, height=150, width=10)
         self._left_window.pack(side=tki.LEFT)
         scroll_bar = tki.Scrollbar(self._left_window)
         scroll_bar.pack(side=tki.LEFT, fill=tki.Y)
-        text = tki.Text(self._left_window)
+        text = tki.Text(self._left_window, width=30)
         text.insert(tki.INSERT, "test string\ntest")
         text.pack()
-        self._canvas = tki.Canvas(self._parent, height=500, width=300)
+        self._canvas_window = tki.Frame(self._parent)
+        self._canvas = tki.Canvas(self._canvas_window, height=500, width=500,
+                                  bg="black")
+
         self._canvas.pack(side=tki.RIGHT)
+        self._canvas_window.pack(side=tki.RIGHT)
 
 root = tki.Tk()
 Gui(root)
