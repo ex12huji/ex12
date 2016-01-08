@@ -7,7 +7,7 @@ class Gui:
         menu = tki.Menu(parent)
         self._parent.config(menu=menu)
 
-        helpmenu = tki.Menu(menu)##Fגיכגיעכיעכ
+        helpmenu = tki.Menu(menu)
         menu.add_cascade(label='Help', menu=helpmenu)
         helpmenu.add_command(label='How to play', command=None)
         helpmenu.add_command(label='About', command=None)
