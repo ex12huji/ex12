@@ -44,6 +44,6 @@ class Gui:
         self._canvas.pack(side=tki.RIGHT)
 
 root = tki.Tk()
-Gui(root)
+Gui(root)#hiiig
 root.mainloop()
 
