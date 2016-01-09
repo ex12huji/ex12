@@ -85,20 +85,24 @@ class Gui:
 
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     ############################################## connecting to server
-    if len(sys.argv) < 6:
-        print('Usage : python client.py <host> <port> <user_name> '
-              '<group_name>')
-    host = sys.argv[1]
-    port = int(sys.argv[2])
-    user_name=bytes(sys.argv[3],'ascii')
-    group_name=bytes(sys.argv[4],'ascii')
-    s=socket.socket()
-    s.connect((host,port))
-    s.sendall(b'join'+DELIM+user_name+DELIM+group_name+MSGDELIM)
-    ###############################################
-    root = tki.Tk()
-    game=Gui(root)
-    root.mainloop()
+#    if len(sys.argv) < 5:
+#        print('Usage : python client.py <host> <port> <user_name> '
+#              '<group_name>')
+#    host = sys.argv[1]
+#    port = int(sys.argv[2])
+ #   user_name=bytes(sys.argv[3],'ascii')
+#    group_name=bytes(sys.argv[4],'ascii')
+#    s=socket.socket()
+#    s.connect((host,port))
+#    s.sendall(b'join'+DELIM+user_name+DELIM+group_name+MSGDELIM)
+#    ###############################################
+
+s=socket.socket()
+s.connect(('localhost',5678))
+s.sendall(b'join;rubi;gddd')
+root = tki.Tk()
+game=Gui(root)
+root.mainloop()
 
